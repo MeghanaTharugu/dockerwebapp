@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   devopsdb:
-  container_name: devopsdb
+    container_name: devopsdb
     image: dbimage
     ports:
       - "3306:3306"
