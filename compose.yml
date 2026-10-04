@@ -2,25 +2,19 @@ version: "3.9"
 
 services:
   devopsdb:
-    image: shaikmustafa/automation:db
+    image: meghanatharugu/docker-project:db-image
     ports:
       - "3306:3306"
     deploy:
       replicas: 3
-    networks:
-      - mynetwork
+  
 
   application:
-    image: shaikmustafa/automation:app
+    image: meghanatharugu/docker-project:app-image
     ports:
       - "1234:8080"
     deploy:
       replicas: 3
     depends_on:
       - devopsdb
-    networks:
-      - mynetwork
-
-networks:
-  mynetwork:
-    driver: overlay
+    
